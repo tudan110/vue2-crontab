@@ -1,24 +1,68 @@
 <template>
   <div id="app">
-    <Vue2SfcTemplate/>
+
+    <div class="container">
+
+      <h1>Vue2Crontab</h1>
+
+      <!-- 表单 -->
+      <el-form :model="form" :inline="true" label-width="110px">
+        <el-form-item label="执行时间" prop="cronExpression">
+          <el-input
+              v-model="form.cronExpression"
+              placeholder="请输入执行时间"
+              clearable
+              @focus="showCron=true"
+          />
+        </el-form-item>
+
+      </el-form>
+
+      <!-- cron 组件 -->
+      <el-dialog title="执行时间" :visible.sync="showCron">
+        <vue2-crontab @hide="showCron=false" @fill="crontabFill" :expression="form.cronExpression"></vue2-crontab>
+      </el-dialog>
+
+    </div>
+
   </div>
+
 </template>
 
 <script>
 
 export default {
   name: 'App',
-  components: {}
+  components: {},
+  data() {
+    return {
+      showCron: false,
+      form: {
+        cronExpression: null,
+      }
+    }
+  },
+  methods: {
+    crontabFill(value) {
+      //确定后回传的值
+      this.form.cronExpression = value
+    },
+  }
 }
 </script>
 
-<style>
+<style scoped>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
   margin-top: 60px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column; /* 垂直排列 */
+  align-items: center; /* 垂直居中 */
+  height: 100vh; /* 设置容器的高度 */
 }
 </style>

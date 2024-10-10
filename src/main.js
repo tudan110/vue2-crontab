@@ -1,8 +1,11 @@
 import Vue from 'vue'
+import Element from 'element-ui'
+import 'element-ui/lib/theme-chalk/index.css'
 import App from './App.vue'
-import Vue2SfcTemplate from '../packages'
+import Vue2Crontab from '../packages'
 
-Vue.use(Vue2SfcTemplate)
+Vue.use(Element)
+Vue.use(Vue2Crontab)
 // 在 App.vue 中引用，并启动项目查看
 
 Vue.config.productionTip = false

@@ -5,7 +5,7 @@ vue2-crontab
 > A template example for Vue.js single-file component supporting Vue 2
 
 <p align='center'>
-<b>English</b> | <a href="https://github.com/tudan110/vue2-sfc-template/blob/main/README.zh-CN.md">简体中文</a>
+<b>English</b> | <a href="https://github.com/tudan110/vue2-crontab/blob/main/README.zh-CN.md">简体中文</a>
 </p>
 
 ## Features
@@ -18,10 +18,10 @@ vue2-crontab
 To directly use this template, please run the following command:
 
 ```bash
-npx degit tudan110/vue2-sfc-template my-component
+npx degit tudan110/vue2-crontab my-component
 ```
 
-And replace vue2-sfc-template and Vue2SfcTemplate globally with the name of your component library.
+And replace vue2-crontab and Vue2Crontab globally with the name of your component library.
 
 ## Installation
 
@@ -76,25 +76,25 @@ npm publish --access public
 ### npm Installation
 
 ```sh
-npm i vue2-sfc-template
+npm i vue2-crontab
 ```
 
 ### Global Import
 Import and register the component in main.js
 ```js
 import Vue from 'vue'
-import Vue2SfcTemplate from 'vue2-sfc-template'
+import Vue2Crontab from 'vue2-crontab'
 
-Vue.use(Vue2SfcTemplate)
+Vue.use(Vue2Crontab)
 ```
 
 ### Manual Import
 ```js
-import Vue2SfcTemplate from 'vue2-sfc-template'
+import Vue2Crontab from 'vue2-crontab'
 
 export default {
     components: {
-        Vue2SfcTemplate
+        Vue2Crontab
     }
 }
 ```
@@ -111,7 +111,7 @@ export default {
     <title>Vite App</title>
     <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
     <!-- Make sure you have this file in your current directory -->
-    <script src="/lib/vue2-sfc-template.umd.js"></script>
+    <script src="/lib/vue2-crontab.umd.js"></script>
     <style>
         #app {
             font-family: Avenir, Helvetica, Arial, sans-serif;
@@ -125,7 +125,7 @@ export default {
 </head>
 <body>
 <div id="app">
-    <vue2-sfc-template></vue2-sfc-template>
+    <vue2-crontab></vue2-crontab>
 </div>
 </body>
 <script>

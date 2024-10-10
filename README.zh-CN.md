@@ -1,11 +1,11 @@
 # Vue2 + JS + Webpack For SFC template
 
-Vue2SfcTemplate
+Vue2Crontab
 
 > 支持 Vue 2 的 Vue.js 单文件组件模板示例。
 
 <p align='center'>
-<a href="https://github.com/tudan110/vue2-sfc-template/blob/main/README.md">English</a> | <b>简体中文</b>
+<a href="https://github.com/tudan110/vue2-crontab/blob/main/README.md">English</a> | <b>简体中文</b>
 </p>
 
 ## 功能
@@ -18,10 +18,10 @@ Vue2SfcTemplate
 要直接使用此模板，请执行以下命令:
 
 ```bash
-npx degit tudan110/vue2-sfc-template my-component
+npx degit tudan110/vue2-crontab my-component
 ```
 
-并将 `vue2-sfc-template` 和 `Vue2SfcTemplate` 全局替换为您的组件库名称。
+并将 `vue2-crontab` 和 `Vue2Crontab` 全局替换为您的组件库名称。
 
 ## 安装
 
@@ -76,25 +76,25 @@ npm publish --access public
 ### npm 安装
 
 ```sh
-npm i vue2-sfc-template
+npm i vue2-crontab
 ```
 
 ### 全局导入
 在 main.js 中导入并注册组件
 ```js
 import Vue from 'vue'
-import Vue2SfcTemplate from 'vue2-sfc-template'
+import Vue2Crontab from 'vue2-crontab'
 
-Vue.use(Vue2SfcTemplate)
+Vue.use(Vue2Crontab)
 ```
 
 ### 手动导入
 ```js
-import Vue2SfcTemplate from 'vue2-sfc-template'
+import Vue2Crontab from 'vue2-crontab'
 
 export default {
     components: {
-        Vue2SfcTemplate
+        Vue2Crontab
     }
 }
 ```
@@ -111,7 +111,7 @@ export default {
     <title>Vite App</title>
     <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
     <!-- 确保你的当前目录有该产物 -->
-    <script src="/lib/vue2-sfc-template.umd.js"></script>
+    <script src="/lib/vue2-crontab.umd.js"></script>
     <style>
         #app {
             font-family: Avenir, Helvetica, Arial, sans-serif;
@@ -125,7 +125,7 @@ export default {
 </head>
 <body>
 <div id="app">
-    <vue2-sfc-template></vue2-sfc-template>
+    <vue2-crontab></vue2-crontab>
 </div>
 </body>
 <script>
