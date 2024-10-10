@@ -1,86 +1,86 @@
-# vue2-crontab
+# Vue2 + JS + Webpack For SFC template
 
-vue2-crontab
+Vue2SfcTemplate
 
-> A template example for Vue.js single-file component supporting Vue 2
+> 支持 Vue 2 的 Vue.js 单文件组件模板示例。
 
 <p align='center'>
-<b>English</b> | <a href="https://github.com/tudan110/vue2-sfc-template/blob/main/README.zh-CN.md">简体中文</a>
+<a href="https://github.com/tudan110/vue2-sfc-template/blob/main/README.md">English</a> | <b>简体中文</b>
 </p>
 
-## Features
+## 功能
 
-- Provides a library mode development environment for Vue 2
-- Adapts scripts in package.json for publishing
+- 为 Vue2 提供库模式的开发环境
+- 在发布时用于适配 package.json 的脚本
 
-## Using the Template
+## 使用模板
 
-To directly use this template, please run the following command:
+要直接使用此模板，请执行以下命令:
 
 ```bash
 npx degit tudan110/vue2-sfc-template my-component
 ```
 
-And replace vue2-sfc-template and Vue2SfcTemplate globally with the name of your component library.
+并将 `vue2-sfc-template` 和 `Vue2SfcTemplate` 全局替换为您的组件库名称。
 
-## Installation
+## 安装
 
-Make sure to install the dependencies first:
+确保先安装依赖：
 
 ```bash
 # sh
 npm install
 ```
 
-## Development
+## 开发
 
-Start the development server:
+启动开发服务：
 
 ```sh
 npm run dev
 ```
 
-## Build
+## 构建
 
-Build the library for production or publishing:
+构建库用于生产或发布：
 
 ```sh
 npm run lib
 ```
 
-Build the example project for production or publishing:
+构建示例项目用于生产或发布：
 
 ```sh
 npm run build
 ```
 
-## Check and Fix Files
+## 检查并修复文件
 ```
 npm run lint
 ```
 
-## Publish Package to npm
+## 发布包到 npm
 
-Log in to the npm registry
+登录 npm 库
 ```sh
 npm login
 ```
 
-Publish
+发布
 ```sh
 npm publish --access public
 ```
 
-## How to Use the lib File?
+## 如何使用 lib 文件？
 
-### npm Installation
+### npm 安装
 
 ```sh
 npm i vue2-sfc-template
 ```
 
-### Global Import
-Import and register the component in main.js
+### 全局导入
+在 main.js 中导入并注册组件
 ```js
 import Vue from 'vue'
 import Vue2SfcTemplate from 'vue2-sfc-template'
@@ -88,7 +88,7 @@ import Vue2SfcTemplate from 'vue2-sfc-template'
 Vue.use(Vue2SfcTemplate)
 ```
 
-### Manual Import
+### 手动导入
 ```js
 import Vue2SfcTemplate from 'vue2-sfc-template'
 
@@ -99,7 +99,7 @@ export default {
 }
 ```
 
-### Without a Build Tool or via `CDN`
+### 不使用构建工具或通过 `CDN` 引入
 
 ```html
 <!DOCTYPE html>
@@ -110,7 +110,7 @@ export default {
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vite App</title>
     <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
-    <!-- Make sure you have this file in your current directory -->
+    <!-- 确保你的当前目录有该产物 -->
     <script src="/lib/vue2-sfc-template.umd.js"></script>
     <style>
         #app {
