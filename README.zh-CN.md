@@ -1,27 +1,18 @@
-# Vue2 + JS + Webpack For SFC template
+# Vue2Crontab
 
 Vue2Crontab
 
-> 支持 Vue 2 的 Vue.js 单文件组件模板示例。
+> 支持 Vue 2 的 crontab 组件。
 
 <p align='center'>
 <a href="https://github.com/tudan110/vue2-crontab/blob/main/README.md">English</a> | <b>简体中文</b>
 </p>
 
-## 功能
+## 截图
 
-- 为 Vue2 提供库模式的开发环境
-- 在发布时用于适配 package.json 的脚本
+![home.png](public/home.png)
 
-## 使用模板
-
-要直接使用此模板，请执行以下命令:
-
-```bash
-npx degit tudan110/vue2-crontab my-component
-```
-
-并将 `vue2-crontab` 和 `Vue2Crontab` 全局替换为您的组件库名称。
+![crontab.png](public/crontab.png)
 
 ## 安装
 
@@ -134,6 +125,77 @@ export default {
     })
 </script>
 </html>
+```
+
+## 示例
+
+```vue
+<template>
+  <div id="app">
+
+    <div class="container">
+
+      <h1>Vue2Crontab</h1>
+
+      <!-- 表单 -->
+      <el-form :model="form" :inline="true" label-width="110px">
+        <el-form-item label="执行时间" prop="cronExpression">
+          <el-input
+              v-model="form.cronExpression"
+              placeholder="请输入执行时间"
+              clearable
+              @focus="showCron=true"
+          />
+        </el-form-item>
+
+      </el-form>
+
+      <!-- cron 组件 -->
+      <el-dialog title="执行时间" :visible.sync="showCron">
+        <vue2-crontab @hide="showCron=false" @fill="crontabFill" :expression="form.cronExpression"></vue2-crontab>
+      </el-dialog>
+
+    </div>
+
+  </div>
+
+</template>
+
+<script>
+  export default {
+    name: 'App',
+    components: {},
+    data() {
+      return {
+        showCron: false,
+        form: {
+          cronExpression: null,
+        }
+      }
+    },
+    methods: {
+      crontabFill(value) {
+        this.form.cronExpression = value
+      },
+    }
+  }
+</script>
+
+<style scoped>
+  #app {
+    font-family: Avenir, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    margin-top: 60px;
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+  }
+</style>
 ```
 
 ## License

@@ -1,27 +1,18 @@
-# vue2-crontab
+# Vue2Crontab
 
 vue2-crontab
 
-> A template example for Vue.js single-file component supporting Vue 2
+> Support for Vue 2's crontab component.
 
 <p align='center'>
 <b>English</b> | <a href="https://github.com/tudan110/vue2-crontab/blob/main/README.zh-CN.md">简体中文</a>
 </p>
 
-## Features
+## Pictures
 
-- Provides a library mode development environment for Vue 2
-- Adapts scripts in package.json for publishing
+![home.png](public/home.png)
 
-## Using the Template
-
-To directly use this template, please run the following command:
-
-```bash
-npx degit tudan110/vue2-crontab my-component
-```
-
-And replace vue2-crontab and Vue2Crontab globally with the name of your component library.
+![crontab.png](public/crontab.png)
 
 ## Installation
 
@@ -134,6 +125,77 @@ export default {
     })
 </script>
 </html>
+```
+
+## Demo
+
+```vue
+<template>
+  <div id="app">
+
+    <div class="container">
+
+      <h1>Vue2Crontab</h1>
+
+      <!-- Form -->
+      <el-form :model="form" :inline="true" label-width="110px">
+        <el-form-item label="ExecutionTime" prop="cronExpression">
+          <el-input
+              v-model="form.cronExpression"
+              placeholder="please input execution time"
+              clearable
+              @focus="showCron=true"
+          />
+        </el-form-item>
+
+      </el-form>
+
+      <!-- cron component -->
+      <el-dialog title="ExecutionTime" :visible.sync="showCron">
+        <vue2-crontab @hide="showCron=false" @fill="crontabFill" :expression="form.cronExpression"></vue2-crontab>
+      </el-dialog>
+
+    </div>
+
+  </div>
+
+</template>
+
+<script>
+  export default {
+    name: 'App',
+    components: {},
+    data() {
+      return {
+        showCron: false,
+        form: {
+          cronExpression: null,
+        }
+      }
+    },
+    methods: {
+      crontabFill(value) {
+        this.form.cronExpression = value
+      },
+    }
+  }
+</script>
+
+<style scoped>
+  #app {
+    font-family: Avenir, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    margin-top: 60px;
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+  }
+</style>
 ```
 
 ## License
