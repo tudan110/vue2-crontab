@@ -30,7 +30,6 @@
 </template>
 
 <script>
-
 export default {
   name: 'App',
   components: {},
@@ -44,7 +43,6 @@ export default {
   },
   methods: {
     crontabFill(value) {
-      //确定后回传的值
       this.form.cronExpression = value
     },
   }
@@ -61,8 +59,8 @@ export default {
 
 .container {
   display: flex;
-  flex-direction: column; /* 垂直排列 */
-  align-items: center; /* 垂直居中 */
-  height: 100vh; /* 设置容器的高度 */
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
 }
 </style>
