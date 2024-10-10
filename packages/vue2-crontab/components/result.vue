@@ -569,7 +569,7 @@ export default {
 
 .popup-result .title {
   position: absolute;
-  top: -16px;
+  top: -26px;
   left: 50%;
   width: 140px;
   font-size: 14px;
